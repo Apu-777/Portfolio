@@ -135,11 +135,9 @@ img {
     padding-top: 75px;
 
     background:
-        radial-gradient(
-            circle at 80% 20%,
+        radial-gradient(circle at 80% 20%,
             rgba(0, 217, 255, 0.12),
-            transparent 30%
-        );
+            transparent 30%);
 }
 
 .hero-content {
@@ -260,24 +258,22 @@ img {
 
     border-radius: 8px;
 
-    background: conic-gradient(
-        from 0deg,
+    background: conic-gradient(from 0deg,
 
-        transparent 0deg,
-        transparent 60deg,
+            transparent 0deg,
+            transparent 60deg,
 
-        #00d9ff 100deg,
+            #00d9ff 100deg,
 
-        #ffffff 140deg,
+            #ffffff 140deg,
 
-        #00d9ff 180deg,
+            #00d9ff 180deg,
 
-        #006eff 230deg,
+            #006eff 230deg,
 
-        transparent 280deg,
+            transparent 280deg,
 
-        transparent 360deg
-    );
+            transparent 360deg);
 
     animation: hireMeBorder 2.5s linear infinite;
 
@@ -415,25 +411,23 @@ img {
 
     border-radius: 50%;
 
-    background: conic-gradient(
-        from 0deg,
+    background: conic-gradient(from 0deg,
 
-        transparent 0deg,
+            transparent 0deg,
 
-        transparent 45deg,
+            transparent 45deg,
 
-        #00d9ff 90deg,
+            #00d9ff 90deg,
 
-        #ffffff 140deg,
+            #ffffff 140deg,
 
-        #00d9ff 190deg,
+            #00d9ff 190deg,
 
-        #006eff 240deg,
+            #006eff 240deg,
 
-        transparent 300deg,
+            transparent 300deg,
 
-        transparent 360deg
-    );
+            transparent 360deg);
 
     animation: heroBorderRotate 3s linear infinite;
 
@@ -646,12 +640,10 @@ img {
 
     inset: 0;
 
-    background: linear-gradient(
-        135deg,
-        rgba(0, 217, 255, 0.20),
-        rgba(0, 110, 255, 0.12),
-        transparent 70%
-    );
+    background: linear-gradient(135deg,
+            rgba(0, 217, 255, 0.20),
+            rgba(0, 110, 255, 0.12),
+            transparent 70%);
 
     opacity: 0;
 
@@ -976,10 +968,7 @@ img {
     transform: scale(1.08);
 
     filter:
-        drop-shadow(
-            0 0 10px
-            rgba(0, 217, 255, 0.35)
-        );
+        drop-shadow(0 0 10px rgba(0, 217, 255, 0.35));
 }
 
 
@@ -1213,7 +1202,7 @@ img {
     margin-bottom: 10px;
 }
 
-.project-content > p:not(.project-type) {
+.project-content>p:not(.project-type) {
     color: #9ba3b4;
 
     font-size: 14px;
@@ -1297,24 +1286,22 @@ img {
 
     border-radius: 14px;
 
-    background: conic-gradient(
-        from 0deg,
+    background: conic-gradient(from 0deg,
 
-        transparent 0deg,
-        transparent 45deg,
+            transparent 0deg,
+            transparent 45deg,
 
-        #00d9ff 90deg,
+            #00d9ff 90deg,
 
-        #ffffff 130deg,
+            #ffffff 130deg,
 
-        #00d9ff 170deg,
+            #00d9ff 170deg,
 
-        #006eff 220deg,
+            #006eff 220deg,
 
-        transparent 270deg,
+            transparent 270deg,
 
-        transparent 360deg
-    );
+            transparent 360deg);
 
     animation:
         serviceBorderRotate 4s linear infinite;
@@ -1443,7 +1430,7 @@ img {
     color: #00d9ff;
 }
 
-.contact-info > p {
+.contact-info>p {
     color: #9ba3b4;
 
     margin-bottom: 30px;
@@ -1674,6 +1661,7 @@ img {
         text-align: center;
     }
 }
+
 /* =========================
    CUSTOM CURSOR
 ========================= */
@@ -1796,6 +1784,7 @@ textarea {
     }
 
 }
+
 /* =========================
    BACK TO TOP BUTTON
    INFINITE BORDER ANIMATION
@@ -1854,16 +1843,14 @@ textarea {
 
     border-radius: 50%;
 
-    background: conic-gradient(
-        from 0deg,
-        transparent 0deg,
-        transparent 70deg,
-        #00d9ff 120deg,
-        #ffffff 180deg,
-        #00d9ff 240deg,
-        transparent 300deg,
-        transparent 360deg
-    );
+    background: conic-gradient(from 0deg,
+            transparent 0deg,
+            transparent 70deg,
+            #00d9ff 120deg,
+            #ffffff 180deg,
+            #00d9ff 240deg,
+            transparent 300deg,
+            transparent 360deg);
 
     animation: rotateBorder 2s linear infinite;
 
