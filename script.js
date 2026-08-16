@@ -197,6 +197,134 @@ window.addEventListener("scroll", () => {
 //     }
 // );
 
+/* =========================
+   CONTACT FORM
+   FORMSPREE AJAX SUBMISSION
+========================= */
+
+const contactForm =
+    document.getElementById("contactForm");
+
+const submitButton =
+    document.getElementById("submitButton");
+
+const formMessage =
+    document.getElementById("formMessage");
+
+
+contactForm.addEventListener("submit", async function (event) {
+
+    /* Stop normal Formspree page redirect */
+
+    event.preventDefault();
+
+
+    /* Change button text */
+
+    submitButton.disabled = true;
+
+    submitButton.textContent = "Sending...";
+
+
+    /* Get form data */
+
+    const formData =
+        new FormData(contactForm);
+
+
+    try {
+
+        /* Send data to Formspree */
+
+        const response = await fetch(
+            contactForm.action,
+            {
+                method: "POST",
+
+                body: formData,
+
+                headers: {
+                    "Accept": "application/json"
+                }
+            }
+        );
+
+
+        /* Check response */
+
+        if (response.ok) {
+
+            /* Success */
+
+            formMessage.textContent =
+                "✓ Message sent successfully!";
+
+            formMessage.className =
+                "form-success";
+
+
+            /* Clear form */
+
+            contactForm.reset();
+
+
+            /* Restore button */
+
+            submitButton.disabled = false;
+
+            submitButton.textContent =
+                "Send Message";
+
+
+            /* Remove message after 5 seconds */
+
+            setTimeout(() => {
+
+                formMessage.textContent = "";
+
+                formMessage.className = "";
+
+            }, 5000);
+
+
+        } else {
+
+            /* Formspree returned an error */
+
+            const data =
+                await response.json();
+
+            throw new Error(
+                data?.errors?.map(
+                    error => error.message
+                ).join(", ") ||
+                "Something went wrong."
+            );
+
+        }
+
+
+    } catch (error) {
+
+        /* Error */
+
+        formMessage.textContent =
+            "✕ Something went wrong. Please try again.";
+
+        formMessage.className =
+            "form-error";
+
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+            "Send Message";
+
+        console.error(error);
+
+    }
+
+});
 
 /* =========================
    CURRENT YEAR
