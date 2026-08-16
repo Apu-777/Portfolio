@@ -1,0 +1,1958 @@
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #0a0f1c;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: min(1120px, 90%);
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: rgba(10, 15, 28, 0.85);
+    backdrop-filter: blur(15px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    width: 80px;
+}
+
+.logo span {
+    color: #00d9ff;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav-link {
+    font-size: 15px;
+    color: #c5c9d3;
+    transition: 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #00d9ff;
+}
+
+.contact-btn {
+    padding: 9px 20px;
+
+    border: 1px solid #00d9ff;
+    border-radius: 6px;
+
+    color: #00d9ff;
+}
+
+.contact-btn:hover {
+    background: #00d9ff;
+    color: #071018;
+}
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    color: #ffffff;
+    font-size: 25px;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 75px;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(0, 217, 255, 0.12),
+            transparent 30%
+        );
+}
+
+.hero-content {
+    display: grid;
+
+    grid-template-columns: 1.3fr 0.7fr;
+
+    align-items: center;
+
+    gap: 60px;
+}
+
+.hero-subtitle {
+    color: #00d9ff;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 80px);
+    line-height: 1.1;
+
+    margin-bottom: 10px;
+}
+
+.hero h2 {
+    font-size: 28px;
+    color: #c5c9d3;
+}
+
+.hero h2 span {
+    color: #00d9ff;
+}
+
+.hero-description {
+    max-width: 600px;
+
+    color: #9ba3b4;
+
+    margin: 25px 0;
+
+    font-size: 17px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+
+    padding: 12px 25px;
+
+    border-radius: 6px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.primary-btn {
+    background: #00d9ff;
+    color: #071018;
+}
+
+.primary-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 217, 255, 0.25);
+}
+
+/* =========================
+   HIRE ME BUTTON
+   ANIMATED GLOWING BORDER
+========================= */
+
+.secondary-btn {
+
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 25px;
+
+    border: 1px solid transparent;
+
+    border-radius: 6px;
+
+    background: #0a0f1c;
+
+    color: #00d9ff;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+}
+
+
+/* Animated glowing border */
+
+.secondary-btn::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -40px;
+
+    border-radius: 8px;
+
+    background: conic-gradient(
+        from 0deg,
+
+        transparent 0deg,
+        transparent 60deg,
+
+        #00d9ff 100deg,
+
+        #ffffff 140deg,
+
+        #00d9ff 180deg,
+
+        #006eff 230deg,
+
+        transparent 280deg,
+
+        transparent 360deg
+    );
+
+    animation: hireMeBorder 2.5s linear infinite;
+
+    z-index: -2;
+
+}
+
+
+/* Button inner background */
+
+.secondary-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: 5px;
+
+    background: #0a0f1c;
+
+    z-index: -1;
+
+}
+
+
+/* =========================
+   BORDER ANIMATION
+========================= */
+
+@keyframes hireMeBorder {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.secondary-btn:hover {
+
+    color: #ffffff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 10px rgba(0, 217, 255, 0.4),
+        0 0 25px rgba(0, 217, 255, 0.2);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #273143;
+
+    border-radius: 50%;
+
+    color: #c5c9d3;
+
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #00d9ff;
+    border-color: #00d9ff;
+
+    transform: translateY(-3px);
+}
+
+
+/* HERO IMAGE */
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+}
+
+/* =========================
+   HERO IMAGE
+   INFINITE BORDER ANIMATION
+========================= */
+
+.image-wrapper {
+
+    position: relative;
+
+    width: 450px;
+    height: 450px;
+
+    border-radius: 50%;
+
+    padding: 7px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Keep the floating animation */
+    animation: float 4s ease-in-out infinite;
+
+    z-index: 1;
+}
+
+
+/* =========================
+   ROTATING BORDER
+========================= */
+
+.image-wrapper::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -1px;
+
+    border-radius: 50%;
+
+    background: conic-gradient(
+        from 0deg,
+
+        transparent 0deg,
+
+        transparent 45deg,
+
+        #00d9ff 90deg,
+
+        #ffffff 140deg,
+
+        #00d9ff 190deg,
+
+        #006eff 240deg,
+
+        transparent 300deg,
+
+        transparent 360deg
+    );
+
+    animation: heroBorderRotate 3s linear infinite;
+
+    z-index: -2;
+}
+
+
+/* =========================
+   INNER BACKGROUND
+========================= */
+
+.image-wrapper::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    border-radius: 50%;
+
+    background: #0a0f1c;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   BORDER ROTATION
+========================= */
+
+@keyframes heroBorderRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.image-wrapper img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+
+    border: 5px solid #0a0f1c;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 60px;
+}
+
+.section-title span {
+    color: #00d9ff;
+    font-family: monospace;
+}
+
+.section-title h2 {
+    font-size: 35px;
+}
+
+.section-title::after {
+    content: "";
+
+    height: 1px;
+
+    width: 100px;
+
+    background: #273143;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about {
+    background: #0d1422;
+}
+
+.about-content {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 32px;
+
+    margin-bottom: 20px;
+}
+
+.about-text h3 span {
+    color: #00d9ff;
+}
+
+.about-text p {
+    color: #9ba3b4;
+
+    margin-bottom: 20px;
+}
+
+.about-stats {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+/* .stat-card {
+    background: #111a2b;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    border: 1px solid #202b3e;
+
+    border-radius: 10px;
+
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    border-color: #00d9ff;
+} */
+
+/* =========================
+   ABOUT STAT CARDS
+   HOVER GRADIENT EFFECT
+========================= */
+
+.stat-card {
+
+    position: relative;
+
+    padding: 30px 20px;
+
+    text-align: center;
+
+    background: #111a2b;
+
+    border: 1px solid #202b3e;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* =========================
+   HOVER GRADIENT
+========================= */
+
+.stat-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        135deg,
+        rgba(0, 217, 255, 0.20),
+        rgba(0, 110, 255, 0.12),
+        transparent 70%
+    );
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.stat-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: #00d9ff;
+
+    box-shadow:
+        0 10px 30px rgba(0, 217, 255, 0.12);
+}
+
+
+/* Show gradient */
+
+.stat-card:hover::before {
+
+    opacity: 1;
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.stat-card i {
+
+    position: relative;
+
+    z-index: 2;
+
+    color: #00d9ff;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+    transition:
+        transform 0.35s ease,
+        text-shadow 0.35s ease;
+}
+
+
+/* Icon hover */
+
+.stat-card:hover i {
+
+    transform: scale(1.15);
+
+    text-shadow:
+        0 0 12px rgba(0, 217, 255, 0.7);
+}
+
+
+/* =========================
+   TEXT
+========================= */
+
+.stat-card h3,
+.stat-card p {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* Number */
+
+.stat-card h3 {
+
+    font-size: 30px;
+
+    transition: color 0.35s ease;
+}
+
+
+/* Number hover */
+
+.stat-card:hover h3 {
+
+    color: #00d9ff;
+}
+
+
+/* Description */
+
+.stat-card p {
+
+    color: #9ba3b4;
+}
+
+.stat-card i {
+    color: #00d9ff;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.stat-card h3 {
+    font-size: 30px;
+}
+
+.stat-card p {
+    color: #9ba3b4;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+    position: relative;
+
+    background: transparent;
+
+    overflow: hidden;
+}
+
+
+/* Skills heading */
+
+.skills-heading {
+    text-align: center;
+
+    margin-top: -25px;
+
+    margin-bottom: 55px;
+}
+
+.skills-heading h3 {
+    font-size: 28px;
+
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+.skills-heading h3 span {
+    color: #00d9ff;
+}
+
+
+/* Skills container */
+
+.skills-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 16px;
+}
+
+
+/* =========================
+   SKILL CATEGORY CARD
+========================= */
+
+.skill-category {
+
+    width: 100%;
+
+    min-height: 155px;
+
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    align-items: center;
+
+    padding: 10px 35px;
+
+    border: 1px solid rgba(0, 217, 255, 0.75);
+
+    border-radius: 16px;
+
+    /* Glass effect */
+
+    background: rgba(255, 255, 255, 0.025);
+
+    backdrop-filter: blur(15px);
+
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        inset 0 0 20px rgba(255, 255, 255, 0.015);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* Card hover */
+
+.skill-category:hover {
+
+    transform: translateY(-4px);
+
+    border-color: #00d9ff;
+
+    background: rgba(0, 217, 255, 0.035);
+
+    box-shadow:
+        0 10px 35px rgba(0, 217, 255, 0.08);
+}
+
+
+/* =========================
+   CATEGORY TITLE
+========================= */
+
+.skill-category-title {
+
+    display: flex;
+
+    align-items: center;
+
+    height: 100%;
+}
+
+.skill-category-title h3 {
+
+    font-size: 25px;
+
+    line-height: 1.05;
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    margin: 0;
+}
+
+.skill-category-title h3 span {
+
+    color: #9edcf0;
+}
+
+
+/* =========================
+   SKILL ITEMS
+========================= */
+
+.skill-items {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 90px;
+
+    min-height: 130px;
+}
+
+
+/* Individual skill */
+
+.skill-item {
+
+    min-width: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* Skill hover */
+
+.skill-item:hover {
+
+    transform: translateY(-5px);
+}
+
+
+/* Skill logo */
+
+.skill-item i {
+
+    font-size: 72px;
+
+    margin-bottom: 12px;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+/* Logo hover */
+
+.skill-item:hover i {
+
+    transform: scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(0, 217, 255, 0.35)
+        );
+}
+
+
+/* Skill name */
+
+.skill-item h4 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 900px) {
+
+    .skill-category {
+
+        grid-template-columns: 200px 1fr;
+
+        padding: 10px 25px;
+    }
+
+    .skill-category-title h3 {
+
+        font-size: 21px;
+    }
+
+    .skill-items {
+
+        gap: 45px;
+    }
+
+    .skill-item i {
+
+        font-size: 60px;
+    }
+
+    .skill-item h4 {
+
+        font-size: 16px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .skills-heading {
+
+        margin-bottom: 35px;
+    }
+
+    .skills-heading h3 {
+
+        font-size: 23px;
+    }
+
+
+    .skill-category {
+
+        grid-template-columns: 1fr;
+
+        padding: 25px 20px;
+
+        min-height: auto;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+
+    .skill-category-title {
+
+        justify-content: center;
+
+        text-align: center;
+    }
+
+
+    .skill-category-title h3 {
+
+        font-size: 22px;
+    }
+
+
+    .skill-items {
+
+        justify-content: center;
+
+        gap: 35px;
+
+        flex-wrap: wrap;
+
+        min-height: auto;
+    }
+
+
+    .skill-item i {
+
+        font-size: 55px;
+    }
+
+
+    .skill-item h4 {
+
+        font-size: 15px;
+    }
+
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.projects {
+    background: #0d1422;
+}
+
+.projects-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.project-card {
+    background: #111a2b;
+
+    border: 1px solid #202b3e;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #00d9ff;
+}
+
+.project-image {
+    position: relative;
+
+    height: 210px;
+
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.4s;
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.08);
+}
+
+.project-links {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    background: rgba(0, 0, 0, 0.7);
+
+    opacity: 0;
+
+    transition: 0.3s;
+}
+
+.project-card:hover .project-links {
+    opacity: 1;
+}
+
+.project-links a {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #00d9ff;
+
+    color: #071018;
+
+    border-radius: 50%;
+}
+
+.project-content {
+    padding: 25px;
+}
+
+.project-type {
+    color: #00d9ff;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+.project-content h3 {
+    margin-bottom: 10px;
+}
+
+.project-content > p:not(.project-type) {
+    color: #9ba3b4;
+
+    font-size: 14px;
+
+    margin-bottom: 15px;
+}
+
+.project-tech {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.project-tech span {
+    padding: 5px 10px;
+
+    font-size: 12px;
+
+    background: #1a2537;
+
+    border-radius: 4px;
+
+    color: #b9c0cc;
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 30px 20px;
+}
+
+/* =========================
+   SERVICE CARDS
+   ANIMATED GLOWING BORDER
+========================= */
+
+.service-card {
+
+    position: relative;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: #0d1422;
+
+    border: 1px solid transparent;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    z-index: 1;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   ANIMATED BORDER
+========================= */
+
+.service-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -55px;
+
+    border-radius: 14px;
+
+    background: conic-gradient(
+        from 0deg,
+
+        transparent 0deg,
+        transparent 45deg,
+
+        #00d9ff 90deg,
+
+        #ffffff 130deg,
+
+        #00d9ff 170deg,
+
+        #006eff 220deg,
+
+        transparent 270deg,
+
+        transparent 360deg
+    );
+
+    animation:
+        serviceBorderRotate 4s linear infinite;
+
+    z-index: -2;
+}
+
+
+/* =========================
+   INNER CARD BACKGROUND
+========================= */
+
+.service-card::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 1px;
+
+    border-radius: 11px;
+
+    background: #0d1422;
+
+    z-index: -1;
+}
+
+
+/* =========================
+   BORDER ROTATION
+========================= */
+
+@keyframes serviceBorderRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   HOVER EFFECT
+========================= */
+
+.service-card:hover {
+
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 0 12px rgba(0, 217, 255, 0.35),
+        0 0 30px rgba(0, 217, 255, 0.15);
+}
+
+
+/* =========================
+   SERVICE ICON
+========================= */
+
+.service-card i {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   SERVICE TEXT
+========================= */
+
+.service-card h3,
+.service-card p {
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.service-card i {
+    font-size: 35px;
+
+    color: #00d9ff;
+
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #9ba3b4;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #0d1422;
+}
+
+.contact-content {
+    display: grid;
+
+    grid-template-columns: 0.8fr 1.2fr;
+
+    gap: 70px;
+}
+
+.contact-info h3 {
+    font-size: 32px;
+
+    margin-bottom: 15px;
+}
+
+.contact-info h3 span {
+    color: #00d9ff;
+}
+
+.contact-info > p {
+    color: #9ba3b4;
+
+    margin-bottom: 30px;
+}
+
+.contact-item {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.contact-item i {
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #111a2b;
+
+    color: #00d9ff;
+
+    border-radius: 7px;
+}
+
+.contact-item h4 {
+    margin-bottom: 3px;
+}
+
+.contact-item p {
+    color: #9ba3b4;
+
+    font-size: 14px;
+}
+
+.contact-form {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 15px;
+
+    background: #111a2b;
+
+    border: 1px solid #273143;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    transition: 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #00d9ff;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    padding: 40px 0 20px;
+
+    background: #070b14;
+}
+
+.footer-content {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 30px;
+
+    border-bottom: 1px solid #202b3e;
+}
+
+.footer-content p {
+    color: #7f8999;
+}
+
+.copyright {
+    text-align: center;
+
+    color: #667080;
+
+    font-size: 13px;
+
+    padding-top: 20px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .hero-content {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-buttons,
+    .social-links {
+        justify-content: center;
+    }
+
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-menu {
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background: #0a0f1c;
+
+        border-bottom: 1px solid #202b3e;
+
+        max-height: 0;
+
+        overflow: hidden;
+
+        transition: 0.3s;
+    }
+
+    .nav-menu.active {
+        max-height: 400px;
+
+        padding: 15px 0;
+    }
+
+    .nav-menu li {
+        width: 100%;
+
+        text-align: center;
+    }
+
+    .nav-link {
+        display: block;
+
+        padding: 12px;
+    }
+
+    .section {
+        padding: 70px 0;
+    }
+
+    .skills-grid,
+    .projects-grid,
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .image-wrapper {
+        width: 240px;
+        height: 240px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+}
+/* =========================
+   CUSTOM CURSOR
+========================= */
+
+.cursor-dot {
+    width: 10px;
+    height: 10px;
+
+    background: #00d9ff;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    z-index: 99999;
+
+    transform: translate(-50%, -50%);
+}
+
+
+.cursor-outline {
+    width: 35px;
+    height: 35px;
+
+    border: 1px solid #00d9ff;
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    border-radius: 50%;
+
+    z-index: 99998;
+
+    transform: translate(-50%, -50%);
+
+    transition:
+        width 0.2s ease,
+        height 0.2s ease,
+        border 0.2s ease,
+        background 0.2s ease,
+        opacity 0.2s ease;
+
+    opacity: 0.8;
+}
+
+
+/* When cursor is moving */
+
+.cursor-outline.moving {
+    width: 45px;
+    height: 45px;
+
+    opacity: 0.5;
+}
+
+
+/* When cursor stops */
+
+.cursor-outline.stopped {
+    width: 30px;
+    height: 30px;
+
+    opacity: 1;
+}
+
+
+/* Cursor over clickable elements */
+
+.cursor-outline.hover {
+    width: 60px;
+    height: 60px;
+
+    background: rgba(0, 217, 255, 0.08);
+
+    border-color: #00d9ff;
+}
+
+
+/* Hide normal cursor */
+
+body {
+    cursor: none;
+}
+
+
+/* Keep cursor hidden on clickable elements */
+
+a,
+button,
+input,
+textarea {
+    cursor: none;
+}
+
+
+/* Don't show custom cursor on mobile */
+
+@media (max-width: 768px) {
+
+    body,
+    a,
+    button,
+    input,
+    textarea {
+        cursor: auto;
+    }
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none;
+    }
+
+}
+/* =========================
+   BACK TO TOP BUTTON
+   INFINITE BORDER ANIMATION
+========================= */
+
+.back-to-top {
+
+    position: fixed;
+
+    right: 30px;
+    bottom: 30px;
+
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #0a0f1c;
+
+    color: #00d9ff;
+
+    font-size: 18px;
+
+    cursor: none;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(20px);
+
+    z-index: 9990;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* =========================
+   ANIMATED BORDER
+========================= */
+
+.back-to-top::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -2px;
+
+    border-radius: 50%;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        transparent 70deg,
+        #00d9ff 120deg,
+        #ffffff 180deg,
+        #00d9ff 240deg,
+        transparent 300deg,
+        transparent 360deg
+    );
+
+    animation: rotateBorder 2s linear infinite;
+
+    z-index: -1;
+}
+
+
+/* Keep button center clean */
+
+.back-to-top::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 2px;
+
+    border-radius: 50%;
+
+    background: #0a0f1c;
+
+    z-index: -1;
+}
+
+
+/* Infinite rotation */
+
+@keyframes rotateBorder {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================
+   SHOW BUTTON
+========================= */
+
+.back-to-top.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* =========================
+   HOVER
+========================= */
+
+.back-to-top:hover {
+
+    color: #ffffff;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 0 15px rgba(0, 217, 255, 0.35),
+        0 0 30px rgba(0, 217, 255, 0.15);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 650px) {
+
+    .back-to-top {
+
+        width: 45px;
+        height: 45px;
+
+        right: 20px;
+        bottom: 20px;
+
+        font-size: 16px;
+    }
+
+}
