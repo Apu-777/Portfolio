@@ -1091,7 +1091,7 @@
 
                     </form> -->
 
-                    <div data-fs-success class="form-success"></div>
+                    <!-- <div data-fs-success class="form-success"></div> -->
                     <div data-fs-error class="form-error"></div>
 
                     <form class="contact-form" id="contactForm">
@@ -1128,6 +1128,18 @@
                         <button type="submit" class="btn primary-btn" data-fs-submit-btn>
                             Send Message
                         </button>
+
+                        <!-- Success message -->
+
+                        <p id="successMessage" class="success-message">
+                            Thank you for your submission!
+                        </p>
+
+
+                        <!-- Error message -->
+
+                        <p data-fs-error class="form-error"></p>
+
 
                     </form>
                 </div>
@@ -1199,21 +1211,77 @@
 
     <!-- Formspree AJAX -->
 
+    <!-- <script>
+        window.formspree =
+            window.formspree ||
+            function () {
+                (formspree.q = formspree.q || []).push(arguments);
+            };
+
+        formspree(
+            'initForm',
+            {
+                formElement: '#contactForm',
+                formId: 'xoeakqbk'
+            }
+        );
+    </script>
+
+    <script src="https://unpkg.com/@formspree/ajax@1" defer>
+    </script> -->
+
     <script>
+
     window.formspree =
         window.formspree ||
         function () {
-            (formspree.q = formspree.q || []).push(arguments);
+
+            (formspree.q =
+                formspree.q || []).push(arguments);
+
         };
+
 
     formspree(
         'initForm',
         {
             formElement: '#contactForm',
-            formId: 'xoeakqbk'
+
+            formId: 'xoeakqbk',
+
+
+            /* Custom success message */
+
+            onSuccess: function () {
+
+                const successMessage =
+                    document.getElementById(
+                        'successMessage'
+                    );
+
+
+                successMessage.classList.add(
+                    'show'
+                );
+
+
+                /* Hide after 5 seconds */
+
+                setTimeout(function () {
+
+                    successMessage.classList.remove(
+                        'show'
+                    );
+
+                }, 5000);
+
+            }
+
         }
     );
+
 </script>
+
 
 <script
     src="https://unpkg.com/@formspree/ajax@1"

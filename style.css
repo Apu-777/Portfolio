@@ -1986,3 +1986,77 @@ textarea {
     cursor: not-allowed;
 
 }
+
+/* =========================
+   CONTACT SUCCESS MESSAGE
+========================= */
+
+.success-message {
+
+    display: none;
+
+    margin-top: 15px;
+
+    padding: 12px 15px;
+
+    text-align: center;
+
+    font-size: 15px;
+
+    font-weight: 500;
+
+    color: #00d9ff;
+
+    background: rgba(0, 217, 255, 0.06);
+
+    border: 1px solid rgba(0, 217, 255, 0.25);
+
+    border-radius: 8px;
+
+}
+
+
+/* Show success message */
+
+.success-message.show {
+
+    display: block;
+
+    animation: successFade 0.4s ease;
+}
+
+
+/* Animation */
+
+@keyframes successFade {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-5px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* Error message */
+
+.form-error {
+
+    margin-top: 10px;
+
+    color: #ff5c5c;
+
+    font-size: 14px;
+
+}
