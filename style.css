@@ -776,10 +776,6 @@ img {
    SKILLS
 ========================= */
 
-/* =========================
-   SKILLS
-========================= */
-
 .skills {
     position: relative;
 
@@ -1297,7 +1293,7 @@ img {
 
     position: absolute;
 
-    inset: -55px;
+    inset: -120px;
 
     border-radius: 14px;
 
