@@ -176,26 +176,26 @@ window.addEventListener("scroll", () => {
    CONTACT FORM
 ========================= */
 
-const contactForm =
-    document.getElementById("contactForm");
+// const contactForm =
+//     document.getElementById("contactForm");
 
-contactForm.addEventListener(
-    "submit",
-    function (event) {
+// contactForm.addEventListener(
+//     "submit",
+//     function (event) {
 
-        event.preventDefault();
+//         event.preventDefault();
 
-        const name =
-            document.getElementById("name").value;
+//         const name =
+//             document.getElementById("name").value;
 
-        alert(
-            `Thank you ${name}! Your message has been received.`
-        );
+//         alert(
+//             `Thank you ${name}! Your message has been received.`
+//         );
 
-        contactForm.reset();
+//         contactForm.reset();
 
-    }
-);
+//     }
+// );
 
 
 /* =========================
