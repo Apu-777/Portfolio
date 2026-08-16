@@ -202,129 +202,129 @@ window.addEventListener("scroll", () => {
    FORMSPREE AJAX SUBMISSION
 ========================= */
 
-const contactForm =
-    document.getElementById("contactForm");
+// const contactForm =
+//     document.getElementById("contactForm");
 
-const submitButton =
-    document.getElementById("submitButton");
+// const submitButton =
+//     document.getElementById("submitButton");
 
-const formMessage =
-    document.getElementById("formMessage");
-
-
-contactForm.addEventListener("submit", async function (event) {
-
-    /* Stop normal Formspree page redirect */
-
-    event.preventDefault();
+// const formMessage =
+//     document.getElementById("formMessage");
 
 
-    /* Change button text */
+// contactForm.addEventListener("submit", async function (event) {
 
-    submitButton.disabled = true;
+//     /* Stop normal Formspree page redirect */
 
-    submitButton.textContent = "Sending...";
-
-
-    /* Get form data */
-
-    const formData =
-        new FormData(contactForm);
+//     event.preventDefault();
 
 
-    try {
+//     /* Change button text */
 
-        /* Send data to Formspree */
+//     submitButton.disabled = true;
 
-        const response = await fetch(
-            contactForm.action,
-            {
-                method: "POST",
-
-                body: formData,
-
-                headers: {
-                    "Accept": "application/json"
-                }
-            }
-        );
+//     submitButton.textContent = "Sending...";
 
 
-        /* Check response */
+//     /* Get form data */
 
-        if (response.ok) {
-
-            /* Success */
-
-            formMessage.textContent =
-                "✓ Message sent successfully!";
-
-            formMessage.className =
-                "form-success";
+//     const formData =
+//         new FormData(contactForm);
 
 
-            /* Clear form */
+//     try {
 
-            contactForm.reset();
+//         /* Send data to Formspree */
 
+//         const response = await fetch(
+//             contactForm.action,
+//             {
+//                 method: "POST",
 
-            /* Restore button */
+//                 body: formData,
 
-            submitButton.disabled = false;
-
-            submitButton.textContent =
-                "Send Message";
-
-
-            /* Remove message after 5 seconds */
-
-            setTimeout(() => {
-
-                formMessage.textContent = "";
-
-                formMessage.className = "";
-
-            }, 5000);
+//                 headers: {
+//                     "Accept": "application/json"
+//                 }
+//             }
+//         );
 
 
-        } else {
+//         /* Check response */
 
-            /* Formspree returned an error */
+//         if (response.ok) {
 
-            const data =
-                await response.json();
+//             /* Success */
 
-            throw new Error(
-                data?.errors?.map(
-                    error => error.message
-                ).join(", ") ||
-                "Something went wrong."
-            );
+//             formMessage.textContent =
+//                 "✓ Message sent successfully!";
 
-        }
+//             formMessage.className =
+//                 "form-success";
 
 
-    } catch (error) {
+//             /* Clear form */
 
-        /* Error */
-
-        formMessage.textContent =
-            "✕ Something went wrong. Please try again.";
-
-        formMessage.className =
-            "form-error";
+//             contactForm.reset();
 
 
-        submitButton.disabled = false;
+//             /* Restore button */
 
-        submitButton.textContent =
-            "Send Message";
+//             submitButton.disabled = false;
 
-        console.error(error);
+//             submitButton.textContent =
+//                 "Send Message";
 
-    }
 
-});
+//             /* Remove message after 5 seconds */
+
+//             setTimeout(() => {
+
+//                 formMessage.textContent = "";
+
+//                 formMessage.className = "";
+
+//             }, 5000);
+
+
+//         } else {
+
+//             /* Formspree returned an error */
+
+//             const data =
+//                 await response.json();
+
+//             throw new Error(
+//                 data?.errors?.map(
+//                     error => error.message
+//                 ).join(", ") ||
+//                 "Something went wrong."
+//             );
+
+//         }
+
+
+//     } catch (error) {
+
+//         /* Error */
+
+//         formMessage.textContent =
+//             "✕ Something went wrong. Please try again.";
+
+//         formMessage.className =
+//             "form-error";
+
+
+//         submitButton.disabled = false;
+
+//         submitButton.textContent =
+//             "Send Message";
+
+//         console.error(error);
+
+//     }
+
+// });
 
 /* =========================
    CURRENT YEAR
